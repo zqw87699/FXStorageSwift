@@ -8,17 +8,17 @@
 
 import Foundation
 
-enum FXStorageType:Int {
+public enum FXStorageType:Int {
     case FXStorageTypeUserDefault = 0//NSUserDefault可删除
     case FXStorageTypeKeyChain = 1//持久化缓存。无法删除
 }
 
-class FXStorageFactory{
+public class FXStorageFactory{
     
     /**
      *  获取缓存对象
      */
-    static func getStorageObject(type:FXStorageType)->IFXStorageProtocol{
+    public static func getStorageObject(type:FXStorageType)->IFXStorageProtocol{
         switch type {
         case .FXStorageTypeKeyChain:
             return FXStorageKeyChain.getInstance()
